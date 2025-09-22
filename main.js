@@ -222,7 +222,11 @@ function questionSet(flag) {
             if (2 * a / divide == 1) {
                 answerTxt = `$ x =${b == 0 ? "" : -b}\\pm ${sqrt.toString()}$`;
             } else {
-                answerTxt = `$ x = \\frac{${b == 0 ? "" : -b}\\pm ${sqrt.toString()}}{${2 * a / divide}} $`;
+                if (b == 0) {
+                    answerTxt = `$ x = \\pm\\frac{${sqrt.toString()}}{${2 * a / divide}} $`;
+                } else {
+                    answerTxt = `$ x = \\frac{${-b}\\pm ${sqrt.toString()}}{${2 * a / divide}} $`;
+                }
             }
         }
         guideTxt = `解の公式 ${formulas.solution} より $\\;\\frac{-${last[1] < 0 ? `(${last[1]})` : last[1]} \\pm \\sqrt{${last[1] < 0 ? `(${last[1]})` : last[1]}^2 - 4 \\times ${a} \\times ${c < 0 ? `(${c})` : c}}}{2\\times${a}} $ `
