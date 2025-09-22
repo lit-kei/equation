@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>二次方程式ジェネレーター</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="google-site-verification" content="DvfNFjAlVr4_8kpecRR6ogaB1fDBn8mpAIOWpMKggLE" />
+    <meta name="description" content="二次方程式を解く練習をするためのサイトです。速く解くことよりも正確に解くことを意識して挑んでください。">
+    <meta name="keywords" content="二次方程式ジェネレーター">
+    <meta name="robots" content="index, follow">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            options: {
+                enableMenu: false
+            },
+            chtml: {
+                displayAlign: 'left',   // 左寄せに変更
+                displayIndent: '0'    // インデント（必要なら）
+            }
+        };
+    </script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1>二次方程式ジェネレーター</h1>
+            <strong><a href="https://lit-kei.github.io/study/feed.html" target="_blank" rel="noopener noreferrer">暗記の小屋</a></strong>
+            <strong><a href="https://lit-kei.github.io/prime/" target="_blank" rel="noopener noreferrer">素因数分解シャトルラン</a></strong>
+        </div>
+    </header>
+
+    <div id="que" class="que">
+        <h2 id="qu">問題:</h2>
+        <strong><p id="question" class="a">&#x00A0</p></strong>
+    </div>
+    <div id="ans" class="ans">
+        <h2 id="an">答え:</h2>
+        <strong><p id="answer" class="a">&#x00A0</p></strong>
+        <strong><p id="guide"></p></strong>
+    </div>
+    <button id="button" type="button">スタート</button>
+    <div class="setting">
+        <h2 class="set-label">設定</h2>
+        <div class="input">
+            <span style="display: block; margin: 20px 0;">解説の表示</span>
+            <div style="display: flex; gap: 40px;">    
+                <label class="toggle-button-1">
+                    <input type="checkbox" id="on-off"/>
+                </label>
+                <label for="on-off" id="toggle-label">Off</span>
+            </div>
+        </div>
+        <div class="input">
+            <span style="display: block; margin: 20px 0;">解答方法</span>
+            <div style="display: flex; gap: 40px;">
+                <label class="toggle-button">
+                    <input type="checkbox" id="toggle"/>
+                </label>
+                <span id="formula">解の公式</span>
+                <span id="factorization">因数分解</span>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
