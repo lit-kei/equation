@@ -160,11 +160,11 @@ function questionSet(flag) {
         last = [alpha, beta];
         txt += 'x^2';
         if (alpha + beta > 0) {
-            if (alpha + beta == 1) { txt += `+x`; }
-            else {txt += `+${alpha + beta}x`; }
+            if (alpha + beta == 1) { txt += `-x`; }
+            else {txt += `${(alpha + beta) * -1}x`; }
         } else if (alpha + beta < 0) {
-            if (alpha + beta == -1) { txt += `-x`; }
-            else {txt += `${alpha + beta}x`; }
+            if (alpha + beta == -1) { txt += `+x`; }
+            else {txt += `+${(alpha + beta) * -1}x`; }
         }
         if (alpha * beta > 0) {
             txt += `+${alpha * beta}=0`;
