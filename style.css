@@ -1,16 +1,28 @@
+:root{
+  --bg: #f9f4ef;          /* 全体の背景：明るいベージュ */
+  --surface: #ffffff;     /* コンテンツ面（カードやパネル）：白でコントラスト */
+  --primary: #8b5e3c;     /* 見出し・ボタン：深みのあるブラウン */
+  --primary-dark: #6f4527;/* ボタン hover・強調：さらに濃いブラウン */
+  --text: #2e2e2e;        /* 本文テキスト：濃いグレー（黒より優しい） */
+  --border: #6f4527;      /* 枠線：淡いグレー寄りベージュ */
+}
+:root {
+  --accent1: #ff8d8d;
+  --accent2: #75bbff;
+}
+
 /* 基本的なリセット */
 * {
     margin: 0;
     padding: 0;
 }
 
-
 header {
     top: 0;
     z-index: 10;
     max-width: 100%;
     height: 110px;
-    background-color: #00796b;
+    background-color: var(--primary);
     margin-bottom: 25px;
 }
 
@@ -24,7 +36,6 @@ header {
 }
 .header-inner h1 {
     margin: 0 30px;
-    color: #004d40; /* 濃い緑青 */
     font-size: 2rem;
     margin-left: 20px; /* 左寄せ */
     color: white;
@@ -47,24 +58,23 @@ header {
     border-left: 2px solid white;
 }
 
-
 /* 全体のスタイル */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #e0f7fa; /* 明るい青色 */
-    color: #00796b; /* 濃い青緑 */
+    background-color: var(--bg);
+    color: var(--text);
     display: flex;
-    justify-content: flex-start; /* 左寄せ */
+    justify-content: flex-start;
     flex-direction: column;
 }
 
 /* 問題と答えのセクション */
 #que, #ans {
-    background-color: #b2ebf2; /* 淡い青 */
+    background-color: var(--surface);
     padding: 20px;
     margin: 25px 20px;
     border-radius: 8px;
-    width: auto; /* 幅を自動で調整 */
+    width: auto;
 }
 
 #question, #answer, #guide {
@@ -85,22 +95,21 @@ body {
     font-size: 1.8rem;
 }
 
-
 /* サブ見出し */
 h2 {
-    color: #004d40;
+    color: var(--primary-dark);
     font-size: 2rem;
 }
 
 /* 問題と答えの文字 */
 strong p {
     font-size: 1.8rem;
-    color: #00796b;
+    color: var(--text);
 }
 
 /* ボタン */
 button {
-    background-color: #00796b; /* ボタンの背景色: 濃い青緑 */
+    background-color: var(--primary);
     color: white;
     border: none;
     padding: 15px 30px;
@@ -113,9 +122,10 @@ button {
 }
 
 button:hover {
-    background-color: #004d40; /* ホバー時の背景色 */
+    background-color: var(--primary-dark);
 }
 
+/* 切替トグル */
 .toggle-button {
     display: flex;
     align-items: center;
@@ -130,24 +140,24 @@ button:hover {
 }
 
 span#formula {
-    color: #ff8d8daa;
+    color: color-mix(in srgb, var(--accent1), transparent 34%);
     font-weight: 400;
     transition: all 0.5s ease;
     cursor: pointer;
 }
 .toggle-button:not(:has(:checked)) + span#formula {
-    color: #ff8d8d;
+    color: var(--accent1);
     font-weight: bold;
     transform: scale(1.1);
 }
 span#factorization {
-    color: #75bbffaa;
+    color: color-mix(in srgb, var(--accent2), transparent 34%);
     font-weight: 400;
     transition: all 0.5s ease;
     cursor: pointer;
 }
 .toggle-button:has(:checked) ~ span#factorization {
-    color: #75bbff;
+    color: var(--accent2);
     font-weight: bold;
     transform: scale(1.1);
 }
@@ -158,25 +168,24 @@ span#factorization {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #ff8d8d;
+    background-color: var(--accent1);
     content: '';
     transition: left .4s;
 }
 
 .toggle-button:has(:checked)::before {
     left: 30px;
-    background-color: #75bbff;
+    background-color: var(--accent2);
 }
 
 .toggle-button input {
     display: none;
 }
 
-
 .setting {
     margin: 20px;
     padding: 20px;
-    border: 1px solid #00796b;
+    border: 2px solid var(--border);
     border-radius: 10px;
 }
 .set-label {
